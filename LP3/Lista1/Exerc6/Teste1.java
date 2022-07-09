@@ -6,7 +6,7 @@ package com.mycompany.teste1;
  */
 public class Teste1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { //Aqui fica nossa main
         System.out.println("Hello World!"); //BASICAO
         
         
