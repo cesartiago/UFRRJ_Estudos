@@ -1,15 +1,15 @@
 
-Vídeo que assisti:
+----- Vídeo que assisti: -----
 https://www.youtube.com/watch?v=eUw24kRR5yk
 
-SEUES PROBLEMAS E RESOLUÇÕES:
+-----SEUS PROBLEMAS E RESOLUÇÕES: -----
 
 ➡Texto usado em 04:59 e Código Teste 06:40 + Resolvendo PROBLEMA cód.: LNK1104:
 opengl32.lib
 glu32.lib
 glut32.lib
 
--> Código Teste:
+------> Código Teste:
 
 #include <iostream>
 
@@ -49,9 +49,10 @@ void main() {
 	glutMainLoop();
 }
 
-➡ Problema  -  cód.: LNK1104:
+------➡ Problema  -  cód.: LNK1104:
 Se vc botou cada arquivo em seu devido lugar, tente mudar lá em cima no Visual Studio (à esquerda de "Depurador Local"), ao lado direito de  "Debug", para as opções x32 ou x86.
 
+------><------
 Link para download dos arquivos: glut.h, glut.lib, glut32.lib, glut.dll e
 glut32.dll do OpenGl:
 https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqblRaa0JRd3JDdzAtWkZqZ1p0WFI1bEt4UXpsQXxBQ3Jtc0tralB4NnVRRUIzNXF4elh1UjV2cUtEZ0dEQTB3WnRZX3VtWFR1dWpkX1pvZEZfZFhQVVFvcUNzMFZybnhDVWgtSzN5WTE2eWJLbTZFOGN6SFphNGswZS1vWFdjbUthWVVQcXJLVjhnMXUxdS1xbGphdw&q=https%3A%2F%2Fwww.inf.pucrs.br%2F%7Emanssour%2FOpenGL%2Fglutdlls37beta.zip&v=eUw24kRR5yk
