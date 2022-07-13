@@ -1,0 +1,16 @@
+FONTE:
+
+Versão:
+glutdlls37beta
+
+Locais que cada um deve ficar:
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\GL\glut
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\lib\x64\glut.lib
+
+C:\Windows\SysWOW64\glut.dll
+
+C:\Windows\SysWOW64\glut32.dll
+
+C:\Windows\System32\glut32.dll
