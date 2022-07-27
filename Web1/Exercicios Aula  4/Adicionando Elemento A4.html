@@ -1,0 +1,20 @@
+<html>
+    <div id ="div1">
+        <p id = "p1"> This is a paragraph. </p>
+        <p id = "p2"> This is another paragraph. </p>
+    </div>
+
+        
+    <script>
+        //crie elemento
+        var para = document.createElement("p"); //NÃO TAVA PEGANDO PQ FICAVA "VERDE" MAS O TEXTO TAVA ESCRITO ERRADO
+        var node = document.createTextNode ("This is new."); //document.tudoJunto!
+        para.appendChild(node); //só até aqui não modificará a página!
+
+        //depois adicione a outro elemento já existente
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+    </script>
+
+    
+</html>

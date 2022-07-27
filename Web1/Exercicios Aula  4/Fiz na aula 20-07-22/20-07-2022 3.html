@@ -1,0 +1,45 @@
+<html>
+	<title> WEB1 200722 </title>
+	<h1 id= "nao usado" onmouseover = "Mudar ()"; onmouseout = "Voltar ()" style = "background-color:red;" > a </h1>
+	<body>
+	
+<body/>
+	
+	<img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXuign_SVl22fxg5IS1KUbgMiAH_YIV1bD6A&usqp=CAU" id="img1" onmouseover = "Mudar ()"; onmouseout = "Voltar ()">
+	
+<div id="replaceAqui"></div>
+
+		
+	<script>
+		//alert ("Coloque o mouse sobre mim")
+		document.getElementById("replaceAqui").innerHTML = "<p>Coloque o mouse sobre mim (a imagem)<p>";
+		console.log ("a")
+		var cookies = navigator.cookieEnabled;
+		function Mudar () {
+			document.getElementById("img1").style.backgroundColor = "black";
+			document.getElementById("img1").style.color = "white";
+			if( cookies == 0){
+				//alert ("Cookies NAO estao habilitados")
+				document.getElementById("replaceAqui").innerHTML = "<p>Cookies NAO estao habilitados<p>";
+			}
+			if( cookies == 1){
+				//alert ("Cookies estao habilitados")
+				document.getElementById("replaceAqui").innerHTML = "<p>Cookies estao habilitados<p>";
+			}
+				
+		}
+		function Voltar (){
+			//alert ("Coloque o mouse sobre mim")
+			document.getElementById("replaceAqui").innerHTML = "<p>Coloque o mouse sobre mim (a imagem)<p>";
+			document.getElementById("img1").style.backgroundColor = "White";
+			document.getElementById("img1").style.color = "black";
+			console.log ("a")
+		}
+		
+		
+	</script>
+
+
+
+
+</html>

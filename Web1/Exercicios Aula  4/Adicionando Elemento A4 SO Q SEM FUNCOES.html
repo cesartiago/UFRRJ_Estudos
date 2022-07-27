@@ -1,0 +1,38 @@
+<html>
+    <div id ="div1">
+        <p id = "p1"> This is a paragraph. </p>
+        <p id = "p2"> This is another paragraph. </p>
+    </div>
+
+        
+    <script>
+        //guarde elemento -> USE += para não ter que usar essa variável!
+        var guardeoOriginal = document.getElementById("div1");
+        
+        console.log("guardeoOriginal =");
+        console.log(guardeoOriginal)
+      
+        //GUARDANDO EM UMA VARIÁVEL E ADICIONANDO DEPOIS, PARECE QUE NÃO DÁ CERTO, POIS FICA => "[OBJECT HTML]"
+        function adiciona (){ //<^não utilizaremos então
+            
+         document.getElementById("div1").innerHTML = guardeoOriginal + "Aaa"; //o innerHTML causa a reconstrução completa do elemento; este método exerce uma substituição de todos os elementos
+         
+        }
+
+        //OU MELHOR, COM +=
+
+        function adicionaMaisIgual (){
+
+        document.getElementById("div1").innerHTML += "Aaa"; //o innerHTML causa a reconstrução completa do elemento; este método exerce uma substituição de todos os elementos
+
+        }
+
+        adicionaMaisIgual();
+        
+
+        //depois adicione a outro elemento já existente
+        
+    </script>
+
+    
+</html>

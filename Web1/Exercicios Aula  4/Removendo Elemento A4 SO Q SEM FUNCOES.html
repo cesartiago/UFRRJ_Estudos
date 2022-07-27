@@ -1,0 +1,32 @@
+<html>
+    <div id ="div1">
+        <p id = "p1"> This is a paragraph. </p>
+        <p id = "p2"> This is another paragraph. </p>
+    </div> <!-- -->
+
+        
+    <script>
+        //O QUE FUNCIONA É O MAIS SIMPLES E "ÓBIVO" KKK. É SÓ LEMBRAR QUE: o innerHTML causa a reconstrução completa do elemento; este método exerce uma substituição de todos os elementos
+        document.getElementById("div1").innerHTML = "<p id = 'p2'> This is another paragraph. </p>"; //TEM QUE USAR ASPAS SIMPLES NESSE CASO > (" 'É DUPLAS NO HTML, MAS SIMPLES AQUI' ")
+        
+
+
+        /*
+        var guardandooResto = document.getElementById("p2");
+        document.getElementById("div1").innerHTML = ""; //"aspas" para elementos HTML, textos né...
+        document.getElementById("div1").innerHTML = guardandooResto;
+        --> MAS DÁ PROBLEMA "[object HTMLParagraphElement]" COMO NO DE ACIONAR
+        */
+
+        /*document.getElementById("div1").innerHTML -= "<p id = 'p1'> This is a paragraph. </p>"; //TEM QUE USAR ASPAS SIMPLES NESSE CASO > (" 'É DUPLAS NO HTML, MAS SIMPLES AQUI' ")
+        USEI -= SÓ QUE AI TÁ APAGANDO TUDO E DEIXANDO O Nan SÓ! Tá tirando até o id p2
+        */
+
+        /* mesmo erro do de cima aqui embaixo:
+        document.getElementById("div1").innerHTML = (document.getElementById("div1").innerHTML - "<p id = 'p1'> This is a paragraph. </p>" )
+        */
+
+    </script>
+
+    
+</html>

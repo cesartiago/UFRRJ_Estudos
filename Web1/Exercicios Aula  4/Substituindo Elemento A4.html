@@ -1,0 +1,21 @@
+<html>
+    <div id ="div1">
+        <p id = "p1"> This is a paragraph. </p>
+        <p id = "p2"> This is another paragraph. </p>
+    </div> <!-- -->
+
+        
+    <script>
+        //crie elemento
+        var para = document.createElement("p");
+        var node = document.createTextNode ("This is new.");
+        para.appendChild(node);
+
+        //depois substitua outro elemento já existente
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("p1");
+        parent.replaceChild (para,child); //newNode, element.childNodes[0] (a ser subistituído)
+    </script>
+
+    
+</html>
