@@ -3,7 +3,7 @@
 
 void init(void);
 void display(void);
-void keyboard(unsigned char key, int x, int y);
+
 
 int main(int argc, char** argv){
   glutInit(&argc, argv);
@@ -13,7 +13,7 @@ int main(int argc, char** argv){
   glutCreateWindow ("Desenhando uma linha");
   init();
   glutDisplayFunc(display); 
-  glutKeyboardFunc(keyboard);
+  
   glutMainLoop();
   return 0;
 }
@@ -27,16 +27,9 @@ void display(void){
   int i;
   glClear(GL_COLOR_BUFFER_BIT);
   glColor3f (0.0, 0.0, 0.0);
-  glBegin(GL_LINES);
-  glVertex2i(40,200);  glVertex2i(200,10);
+    glBegin(GL_LINES); //Inicializa linhas - uma linha a cada dois comandos de glVertex2i
+  glVertex2i(40,200);  glVertex2i(200,10); //Ponto Inicial e dps o ponto final da nossa reta
+  glVertex2i(20,5); glVertex2i(200,55);
   glEnd();
   glFlush();
-}
-
-void keyboard(unsigned char key, int x, int y){
-  switch (key) {
-  case 27:
-	exit(0);
-	break;
-  }
 }
