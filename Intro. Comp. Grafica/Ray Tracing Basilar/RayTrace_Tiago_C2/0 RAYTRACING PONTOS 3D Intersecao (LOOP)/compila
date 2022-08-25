@@ -1,0 +1,2 @@
+clang -g -o Pontos_de_Interseccao_3D *.c -I ../../../include -I ./include -I ../include -I ../../include -I /usr/local/include -L /usr/local/lib -lGL -lGLU -lglut -lm
+
