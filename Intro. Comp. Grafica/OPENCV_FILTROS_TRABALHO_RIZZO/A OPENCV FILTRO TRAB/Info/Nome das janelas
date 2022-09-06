@@ -1,0 +1,24 @@
+
+/* -----------------------------------  NÃO-EXCLUIR: NOMES DAS JANELAS --------------------------------------
+
+	namedWindow( "Sobel", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "Blur", WINDOW_NORMAL ); } //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "Erode", WINDOW_NORMAL ); } //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "Dilate", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "Gaussian", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "GaussianBlur", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "Laplacian", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "Filtro Bilateral", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+
+	namedWindow( "para RGB", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "para HSV", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "para Tons de cinza", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+
+	namedWindow( "Calcular a media", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	namedWindow( "Calcular o desvio padrão", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	
+	namedWindow( "Salvar a imagem", WINDOW_NORMAL ); //Temos que por isso aqui pra fazer a janela com o botão deslizante
+	 
+	 -----------------------------------  NÃO-EXCLUIR: NOMES DAS JANELAS --------------------------------------
+*/
+
