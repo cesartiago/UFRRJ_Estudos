@@ -1,0 +1,276 @@
+--------------------------------------------------------------------------------
+SOBRE O SISTEMA ESPECIALISTA
+  -- Nome:    RECOMENDACAO DE TIPOS DE SKATE -  por Tiago Cesar
+  -- Autores: Tiago César.
+
+Operador de maior precedência: conjunção
+Fator de confiança mínimo para aceitação de regra: 50
+
+SOBRE OS ARQUIVOS
+  Arquivo original: PC DE TIAGO CÉSAR.
+  O sistema não possui recursos de ajuda.
+--------------------------------------------------------------------------------
+
+VARIÁVEIS
+
+  Modalidade de skate recomendada
+    Valores:
+      skate street: para manobras e passeios curtos.
+      skate para slalom: se divirta com os cones.
+      longboard dancing: dance e se divirta no longboard
+      longboard donwhill slide: deslize pelo asfalto.
+      cruiser: dê bons passeios com seu carrinho
+      simulador de surf: surf sem ondas.
+      skate vertical: para rampas altas e até piscinas.
+      skate freestyle: seja criativo nos diversos locais.
+      longboard donwhill speed: velocidade é a sua meta.
+      longboard freeride: deslize e seja criativo com manobras no asfalto
+      mini cruiser: um skate portátil e bom pra passeios
+      skate para bowl: ande nas piscinas e banks.
+    Tipo:
+      multivalorada
+  características e/ou portabilidade
+    Valores:
+      Bem pequeno, cabe em mais lugares, e de plástico
+      Normal
+      Pequeno
+    Tipo:
+      univalorada
+  local principal
+    Valores:
+      Bowls e piscinas
+      Ruas, áreas urbanas e pistas com obstáculos de rua (corrimão etc)
+      Solo e em obstáculos pequenos
+      Pistas e half-pipes (verticais)
+      Ladeiras
+    Tipo:
+      univalorada
+  modalidade base
+    Valores:
+      Não tenho muita certeza ainda
+      Cruiser
+      Skate
+      simulador de surf
+      Longboard
+    Tipo:
+      univalorada
+  o que você quer fazer mais
+    Valores:
+      Velocidade, adrenalina ou manobras descendo ladeiras
+      Zigue-zague em cones
+      Só andar
+      Simular surf
+      Movimentos de dança em cima do skate
+      Manobras no geral
+    Tipo:
+      univalorada
+  onde e/ou que tipo de manobras de longboard
+    Valores:
+      Não quero fazer manobras de longboard
+      Ladeiras derrapando
+      Ladeiras em velocidade apenas
+      Ladeiras com variedade, derrapar pular com skate girando embaixo
+    Tipo:
+      univalorada
+  que tipo de manobras de skate e/ou onde
+    Valores:
+      Aéreos, slides e grinds etc em verticais
+      Zigue-zague em cones
+      Não quero fazer manobras de skate
+      Manobras de rua, corrimão e caixote etc
+      Aéreos, slides e grinds etc bowls e piscinas
+      Manobras na rua criativas, menos arriscadas e mais técnicas
+    Tipo:
+      univalorada
+
+OBJETIVOS
+
+  Modalidade de skate recomendada
+
+REGRAS
+
+  Regra 1
+    SE modalidade base = Skate
+    ENTÃO Modalidade de skate recomendada = skate street: para manobras e passeios curtos. CNF 80%
+          Modalidade de skate recomendada = skate vertical: para rampas altas e até piscinas. CNF 80%
+          Modalidade de skate recomendada = skate para slalom: se divirta com os cones. CNF 80%
+          Modalidade de skate recomendada = skate freestyle: seja criativo nos diversos locais. CNF 80%
+
+  Regra 2
+    SE modalidade base = Longboard
+    ENTÃO Modalidade de skate recomendada = longboard dancing: dance e se divirta no longboard CNF 80%
+          Modalidade de skate recomendada = longboard donwhill slide: deslize pelo asfalto. CNF 80%
+          Modalidade de skate recomendada = longboard donwhill speed: velocidade é a sua meta. CNF 80%
+          Modalidade de skate recomendada = longboard freeride: deslize e seja criativo com manobras no asfalto CNF 80%
+
+  Regra 3
+    SE modalidade base = Cruiser
+    ENTÃO Modalidade de skate recomendada = cruiser: dê bons passeios com seu carrinho CNF 80%
+          Modalidade de skate recomendada = mini cruiser: um skate portátil e bom pra passeios CNF 80%
+
+  Regra 4
+    SE modalidade base = simulador de surf
+    ENTÃO Modalidade de skate recomendada = simulador de surf: surf sem ondas. CNF 100%
+
+  Regra 5
+    SE modalidade base = Não tenho muita certeza ainda
+    ENTÃO Modalidade de skate recomendada = cruiser: dê bons passeios com seu carrinho CNF 50%
+          Modalidade de skate recomendada = longboard dancing: dance e se divirta no longboard CNF 50%
+          Modalidade de skate recomendada = longboard donwhill slide: deslize pelo asfalto. CNF 50%
+          Modalidade de skate recomendada = longboard donwhill speed: velocidade é a sua meta. CNF 50%
+          Modalidade de skate recomendada = longboard freeride: deslize e seja criativo com manobras no asfalto CNF 50%
+          Modalidade de skate recomendada = mini cruiser: um skate portátil e bom pra passeios CNF 50%
+          Modalidade de skate recomendada = simulador de surf: surf sem ondas. CNF 50%
+          Modalidade de skate recomendada = skate freestyle: seja criativo nos diversos locais. CNF 50%
+          Modalidade de skate recomendada = skate para bowl: ande nas piscinas e banks. CNF 50%
+          Modalidade de skate recomendada = skate para slalom: se divirta com os cones. CNF 50%
+          Modalidade de skate recomendada = skate street: para manobras e passeios curtos. CNF 50%
+          Modalidade de skate recomendada = skate vertical: para rampas altas e até piscinas. CNF 50%
+
+  Regra 6
+    SE que tipo de manobras de skate e/ou onde = Aéreos, slides e grinds etc bowls e piscinas
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Bowls e piscinas
+    E  o que você quer fazer mais = Manobras no geral
+    ENTÃO Modalidade de skate recomendada = skate para bowl: ande nas piscinas e banks. CNF 100%
+
+  Regra 7
+    SE que tipo de manobras de skate e/ou onde = Aéreos, slides e grinds etc em verticais
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Pistas e half-pipes (verticais)
+    E  que tipo de manobras de skate e/ou onde = Aéreos, slides e grinds etc em verticais
+    ENTÃO Modalidade de skate recomendada = skate vertical: para rampas altas e até piscinas. CNF 100%
+
+  Regra 8
+    SE que tipo de manobras de skate e/ou onde = Manobras de rua, corrimão e caixote etc
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ruas, áreas urbanas e pistas com obstáculos de rua (corrimão etc)
+    E  que tipo de manobras de skate e/ou onde = Manobras de rua, corrimão e caixote etc
+    ENTÃO Modalidade de skate recomendada = skate street: para manobras e passeios curtos. CNF 100%
+
+  Regra 9
+    SE que tipo de manobras de skate e/ou onde = Manobras na rua criativas, menos arriscadas e mais técnicas
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Solo e em obstáculos pequenos
+    E  o que você quer fazer mais = Manobras no geral
+    E  que tipo de manobras de skate e/ou onde = Manobras na rua criativas, menos arriscadas e mais técnicas
+    ENTÃO Modalidade de skate recomendada = skate freestyle: seja criativo nos diversos locais. CNF 100%
+
+  Regra 10
+    SE que tipo de manobras de skate e/ou onde = Zigue-zague em cones
+    OU o que você quer fazer mais = Zigue-zague em cones
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ladeiras
+    E  o que você quer fazer mais = Zigue-zague em cones
+    ENTÃO Modalidade de skate recomendada = skate para slalom: se divirta com os cones. CNF 100%
+
+  Regra 11
+    SE o que você quer fazer mais = Movimentos de dança em cima do skate
+    ENTÃO Modalidade de skate recomendada = longboard dancing: dance e se divirta no longboard CNF 100%
+
+  Regra 12
+    SE onde e/ou que tipo de manobras de longboard = Ladeiras em velocidade apenas
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ladeiras
+    E  o que você quer fazer mais = Velocidade, adrenalina ou manobras descendo ladeiras
+    E  onde e/ou que tipo de manobras de longboard = Ladeiras em velocidade apenas
+    ENTÃO Modalidade de skate recomendada = longboard donwhill speed: velocidade é a sua meta. CNF 100%
+
+  Regra 13
+    SE onde e/ou que tipo de manobras de longboard = Ladeiras com variedade, derrapar pular com skate girando embaixo
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ladeiras
+    E  o que você quer fazer mais = Velocidade, adrenalina ou manobras descendo ladeiras
+    E  onde e/ou que tipo de manobras de longboard = Ladeiras com variedade, derrapar pular com skate girando embaixo
+    ENTÃO Modalidade de skate recomendada = longboard freeride: deslize e seja criativo com manobras no asfalto CNF 100%
+
+  Regra 14
+    SE onde e/ou que tipo de manobras de longboard = Ladeiras derrapando
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ladeiras
+    E  o que você quer fazer mais = Velocidade, adrenalina ou manobras descendo ladeiras
+    E  onde e/ou que tipo de manobras de longboard = Ladeiras derrapando
+    ENTÃO Modalidade de skate recomendada = longboard donwhill slide: deslize pelo asfalto. CNF 100%
+
+  Regra 15
+    SE o que você quer fazer mais = Só andar
+    OU características e/ou portabilidade = Pequeno
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ladeiras
+    E  o que você quer fazer mais = Só andar
+    ENTÃO Modalidade de skate recomendada = cruiser: dê bons passeios com seu carrinho CNF 100%
+          Modalidade de skate recomendada = mini cruiser: um skate portátil e bom pra passeios CNF 90%
+
+  Regra 16
+    SE características e/ou portabilidade = Bem pequeno, cabe em mais lugares, e de plástico
+    OU modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ladeiras
+    E  o que você quer fazer mais = Só andar
+    E  características e/ou portabilidade = Bem pequeno, cabe em mais lugares, e de plástico
+    ENTÃO Modalidade de skate recomendada = mini cruiser: um skate portátil e bom pra passeios CNF 100%
+          Modalidade de skate recomendada = cruiser: dê bons passeios com seu carrinho CNF 90%
+
+  Regra 17
+    SE o que você quer fazer mais = Simular surf
+    ENTÃO Modalidade de skate recomendada = simulador de surf: surf sem ondas. CNF 100%
+
+  Regra 18
+    SE modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ladeiras
+    ENTÃO Modalidade de skate recomendada = longboard freeride: deslize e seja criativo com manobras no asfalto CNF 60%
+
+  Regra 19
+    SE modalidade base = Não tenho muita certeza ainda
+    E  local principal = Ruas, áreas urbanas e pistas com obstáculos de rua (corrimão etc)
+    ENTÃO Modalidade de skate recomendada = skate street: para manobras e passeios curtos. CNF 60%
+
+  Regra 20
+    SE modalidade base = Não tenho muita certeza ainda
+    E  local principal = Pistas e half-pipes (verticais)
+    ENTÃO Modalidade de skate recomendada = skate vertical: para rampas altas e até piscinas. CNF 60%
+          Modalidade de skate recomendada = skate para bowl: ande nas piscinas e banks. CNF 30%
+
+  Regra 21
+    SE modalidade base = Não tenho muita certeza ainda
+    E  local principal = Solo e em obstáculos pequenos
+    ENTÃO Modalidade de skate recomendada = skate freestyle: seja criativo nos diversos locais. CNF 60%
+          Modalidade de skate recomendada = skate street: para manobras e passeios curtos. CNF 60%
+
+  Regra 22
+    SE modalidade base = Não tenho muita certeza ainda
+    E  local principal = Bowls e piscinas
+    ENTÃO Modalidade de skate recomendada = skate para bowl: ande nas piscinas e banks. CNF 60%
+
+  Regra 23
+    SE modalidade base = Não tenho muita certeza ainda
+    E  o que você quer fazer mais = Manobras no geral
+    ENTÃO Modalidade de skate recomendada = skate street: para manobras e passeios curtos. CNF 60%
+
+  Regra 24
+    SE modalidade base = Não tenho muita certeza ainda
+    E  o que você quer fazer mais = Velocidade, adrenalina ou manobras descendo ladeiras
+    ENTÃO Modalidade de skate recomendada = longboard freeride: deslize e seja criativo com manobras no asfalto CNF 60%
+
+PERGUNTAS
+
+  Variável:características e/ou portabilidade
+     Pergunta:"Características e/ou portabilidade do skate:"
+     Motivo:"Características e/ou portabilidade do skate, long, cruiser etc.
+  Variável:local principal
+     Pergunta:"Qual será o tipo de lugar principal em que se usará o skate?"
+  Variável:modalidade base
+     Pergunta:"Qual modalidade base mais te atrai?"
+     Motivo:"Resposta esperada = nenhuma (Não tenho muita certeza ainda/Não conheço muito)
+  Variável:o que você quer fazer mais
+     Pergunta:"Qual será o uso principal que se fará?"
+  Variável:onde e/ou que tipo de manobras de longboard
+     Pergunta:"Onde e/ou que tipo de manobras de longboard se pretende fazer?"
+  Variável:que tipo de manobras de skate e/ou onde
+     Pergunta:"Que tipo de manobras de skate e/ou onde que se pretende fazer?"
+
+--------------------------------------------------------------------------------
+Gerado com o Expert SINTA versão 1.1b
+(c) 1997 - Universidade Federal do Ceará
+           Laboratório de Inteligência Artificial
+           LIA/UFC
+--------------------------------------------------------------------------------
