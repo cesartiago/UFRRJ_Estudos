@@ -1,0 +1,61 @@
+/*
+
+Ideia: Cálculo da desvalorização média do preço de uma camisa usada
+para o seguinte contexto: você é dono de um brechó, e quer fazer a avaliação
+média da desvalorização de uma camisa (recém chagada) a partir do preço original.
+
+*/
+
+FUNCTION_BLOCK tipper	// Block definition (there may be more than one block per file)
+
+VAR_INPUT				// Define as variáveis de entrada
+	estado_da_roupa : REAL;
+	anos_de_uso : REAL;
+END_VAR
+
+VAR_OUTPUT				// Define as variáveis de saída
+	desvalorizacao : REAL;
+END_VAR
+
+FUZZIFY estado_da_roupa			// Fuzzifica a variável de entrada 'estado_da_roupa': {'velha', 'seminova' , 'nova'}
+	TERM nova := (0, 1) (4, 0) ; 
+	TERM seminova := (2.5, 0) (4,1) (7,1) (8,0);
+	TERM velha := (6, 0) (10, 1);
+END_FUZZIFY
+
+FUZZIFY anos_de_uso			// Fuzzifica a variável de entrada 'anos_de_uso': { 'poucos', 'alguns', 'muitos' }
+	TERM poucos := (0, 1) (1, 1) (2,0) ;
+        TERM alguns := (1,0) (1.5,1) (4,1) (6,0);
+	TERM muitos := (2.5,0) (7,1);
+END_FUZZIFY
+
+DEFUZZIFY desvalorizacao			// Defuzzifica a variável de saída 'desvalorizacao' : {'pequena', 'media', 'alta' }
+	//TERM muito pequena := (0,0) (5,1) (10,1) (20,0);
+        TERM pequena := (0,0) (5,1) (20,0);
+	TERM media_baixa := (20,0) (25,1) (35,0);
+        TERM media := (30,0) (45,1) (50,0);
+	TERM alta := (50,0) (70,1) (100,0);
+        METHOD : COG;		// Uso o Centro de Gravidade como método de defuzzificacao
+	DEFAULT := 0;		// Valor default é 0 (se nenhuma regra ativar o defuzzificador)
+END_DEFUZZIFY
+
+RULEBLOCK No1
+	AND : MIN;			// Usa 'min' para o 'and' 
+	ACT : MIN;			// Usa 'min' como método de ativação
+	ACCU : MAX;			// Usa 'max' como método de acumulação
+
+	RULE 1 : IF estado_da_roupa IS nova AND anos_de_uso IS muitos THEN desvalorizacao IS pequena;
+	RULE 2 : IF estado_da_roupa IS nova AND anos_de_uso IS alguns THEN desvalorizacao IS media;
+	RULE 3 : IF estado_da_roupa IS nova AND anos_de_uso IS poucos THEN desvalorizacao IS pequena;
+
+        RULE 4 : IF estado_da_roupa IS seminova AND anos_de_uso IS muitos THEN desvalorizacao IS alta;
+	RULE 5 : IF estado_da_roupa IS seminova AND anos_de_uso IS alguns THEN desvalorizacao IS media;
+	RULE 6 : IF estado_da_roupa IS seminova AND anos_de_uso IS poucos THEN desvalorizacao IS media;
+
+	RULE 7 : IF estado_da_roupa IS velha AND anos_de_uso IS muitos OR anos_de_uso IS alguns THEN desvalorizacao IS alta;
+	RULE 8 : IF estado_da_roupa IS velha AND anos_de_uso IS alguns THEN desvalorizacao IS alta;
+	RULE 9 : IF estado_da_roupa IS velha AND anos_de_uso IS poucos THEN desvalorizacao IS alta; //A roupa/camisa que é de má qualidade mesmo nesse caso. Por isso está "acabada" em pouco tempo. Por isso, meio-termo
+
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
