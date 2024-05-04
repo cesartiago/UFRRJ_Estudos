@@ -1,0 +1,1 @@
+java -jar D:\Users\tiago\Downloads\JFLAP7.1.jar
